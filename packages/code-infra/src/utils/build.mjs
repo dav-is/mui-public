@@ -248,6 +248,9 @@ export async function createPackageExports({
             ? defaultExport.default
             : defaultExport;
       }
+      if (exportVal.import && exportVal.default) {
+        delete exportVal.import;
+      }
     }
   });
 
